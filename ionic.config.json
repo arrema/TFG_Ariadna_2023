@@ -1,0 +1,7 @@
+{
+  "name": "mosaic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

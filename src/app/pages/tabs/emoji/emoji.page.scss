@@ -1,0 +1,168 @@
+.back-arrow {
+    color: #F9F9F9;
+    font-size: 20px;
+}
+.text-mosaic {
+    font-style: normal;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #F9F9F9;
+}
+
+.header{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 750px;
+}
+
+
+.login-card {
+    width: 300px;
+}
+
+.button-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:10px;
+}
+
+.username-input {
+    --height: 30px;
+    --border-radius: 20px;
+    --background: #343232;
+    --color: white;
+    margin-bottom:20px;
+}
+
+.password-input {
+    --height: 40px;
+    --border-radius: 20px;
+    margin-top: 20px;
+    --background: #343232;
+    --color: white;
+}
+
+.login-button {
+    width: 150px;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #FFC300;
+    border-radius: 30px;
+}
+
+.error {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    margin-left: 20px;
+    color: #FF0000;
+
+}
+
+.text-sign-up {
+    color: white;
+    position: relative;
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.text-sign-up:before {
+    content: " ";
+    display: block;
+    height: 1px;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 180px;
+    background: #f5f6f9;
+}
+
+.text-sign-up:after {
+    content: " ";
+    height: 1px;
+    width: 80px;
+    background: #f5f6f9;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -94px;
+}
+
+.login-firebase {
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.option-login{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 284px;
+    
+}
+
+.icon-container{
+    width: 70px;
+    height: 70px;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-logo-image{
+    width: 40px;height: 40px;
+}
+
+.click-login{
+    color: #FFC300;
+    position: relative;
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    font-weight: 400;
+}
+.text-have-account{
+    color: white;
+   
+}
+
+.go-login{
+    margin-top:100px;
+
+}
+
+.create-account-title{
+    width: 150px;
+}
+.create-account-text{
+    color:white;
+    font-size: 30px;
+    font-weight: 500;
+}
+.position-phrase{
+    width: 74%;
+    margin-bottom: 60px;
+}

@@ -61,10 +61,10 @@ export class RegisterPage implements OnInit {
     return this.ionicFormRegister.controls;
   }
 
-  async presentAlert() {
+  async presentAlert(message : string) {
     console.log('entra')
     const alert = await this.alertController.create({
-      header: 'Informacion incorrecta',
+      header: message,
       message: 'Cmpruebe la informacion',
       buttons: ['OK']
     });
@@ -113,7 +113,7 @@ export class RegisterPage implements OnInit {
 
   for(let i = 0; i < this.usersList.length; i++){
     if ( usr == this.usersList[i].username){
-      correctInfo = false
+      correctInfo = false;
       console.log('el usr ya esta registrado')
     }else{
       correctInfo = true;
@@ -135,24 +135,33 @@ export class RegisterPage implements OnInit {
   submitFormRegister() {
     if (this.ionicFormRegister.valid){
       let username = this.ionicFormRegister.controls['username'].value;
+      let password =this.ionicFormRegister.controls['password'].value;
+      let name =this.ionicFormRegister.controls['name'].value;
+      
       let validUser: boolean = this.validarUsername(username);
 
       if(validUser) {
         console.log('Email Valid', "True");
 
-        if(this.ionicFormRegister.controls['password'].value == this.ionicFormRegister.controls['passwordRepeat'].value) {
-          this.presentAlert();
+        if(this.ionicFormRegister.controls['password'].value != this.ionicFormRegister.controls['passwordRepeat'].value) {
+
+          this.presentAlert('Las contraseñas no coinciden');
         }else{
           console.log('datos correctos');
-          
-
-        }
+          let userAdd : User = {
+          "username" : username ,
+          "password" : password,
+          "name" : name, }
+          this.firestoreService.addNewUser(userAdd);
+          this.presentAlert("Registro creado correctamente!");
+          this.navcontroler.navigateForward('tabs',{state : {userAdd : this.user}});        }
       }else {
         console.log('Email Valid', "False");
+        this.presentAlert("El usuario ya existe");
       }
     }else{
       console.log('error en la introduccion de datos')
-      this.presentAlert();
+      this.presentAlert("Error en la introducción de datos");
     }
   }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
-import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore,addDoc } from "firebase/firestore";
 import { environment } from 'src/environments/environment';
 import { Restaurants } from '../interfaces/restaurants';
 import { User } from '../interfaces/user';
@@ -76,22 +76,8 @@ return eventsList;
     this.googlePlus.logout();
   }
 
-  // GoogleAuth() {
-  //   return this.AuthLogin(new GoogleAuthProvider());
-  // }
-  // AuthLogin(provider: GoogleAuthProvider) {
-  //   return this.afAuth
-  //       .signInWithPopup(provider)
-  //       .then((result) => {
-
-  //         console.log(result.additionalUserInfo);
-  //         localStorage.setItem('user', JSON.stringify(result.additionalUserInfo))
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  // }
-  // emailLogin(email: string, password: string){
-  //     return this.afAuth.signInWithEmailAndPassword(email, password);
-  // }
+  async addNewUser(userAdd : User){
+    await addDoc(collection(this.db, "users"), userAdd);
+  }
+  
 }

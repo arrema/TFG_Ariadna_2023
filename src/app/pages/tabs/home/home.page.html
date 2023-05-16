@@ -1,0 +1,19 @@
+<ion-content>
+  <div class="container">
+    <div class="header">
+      <ion-text class="text-header">Restaurantes</ion-text>
+      <ion-icon class="icon-header" name="restaurant-outline"></ion-icon>
+    </div>
+    <div class="searchbar-container">
+      <ion-searchbar class="searchbar" show-clear-button="never" placeholder="Buscador" ion (ionInput)="findRestaurant($event)"></ion-searchbar>
+    </div>
+    <div  class="principal-content">
+      <div *ngFor="let restaurant of restaurantsList | filter:findText " class="figure" (click)="showRestaurantDetails(restaurant)">
+        <div>
+          <ion-text class="restaurant-name">{{restaurant.Name}}</ion-text> 
+          <img [src]="restaurant.MainPhoto" class="image">
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

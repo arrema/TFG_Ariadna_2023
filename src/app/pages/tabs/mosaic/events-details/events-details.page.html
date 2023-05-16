@@ -1,0 +1,73 @@
+<ion-content [scrollEvents]="true">
+  <div class="image-content">
+    <div class="return-mosaic-text">
+      <ion-icon name="arrow-back-outline" class="back-arrow" (click)="goBackMosaic()"></ion-icon>
+      <ion-text class="text-mosaic">Volver</ion-text>
+    </div>
+    <img [src]="event.photo" class="image">
+  </div>
+  <ion-modal scrollable class="modal" [isOpen]="true" type="md" [initialBreakpoint]="0.70" [breakpoints]="[0.8,0.70,1]">
+    <ng-template>
+      <ion-content [scrollEvents]="true">
+        <div class="return-mosaic-text-inside" *ngIf="isActive">
+          <ion-icon name="arrow-back-outline" class="back-arrow" (click)="goBackMosaic()"></ion-icon>
+          <ion-text class="text-mosaic">Volver</ion-text>
+         </div> 
+      <div class="modal-container">
+       
+        <div class="title">
+          <div style="width:350px"><ion-text class="name">{{event.name}}</ion-text></div>
+        </div>
+        <div class="separation-line"></div>
+        <div class="info">
+          <div class="all-info-first">
+            <div class="info-photo">
+              <img class="img" src="https://img.freepik.com/vector-gratis/euro-simbolo-vector-dibujado-mano-doodle-fuente-tipografia_53876-171561.jpg?w=1380&t=st=1683799459~exp=1683800059~hmac=a2668881b0c1f9ae8017cd4ae76f2d45171749e2f43b173cb8a485c067c34984">
+            </div>
+            <div class="separator-column"></div>
+            <div class="info-container">
+              <div class="down-container"><ion-text class="text-up">{{event.price}}</ion-text></div>
+              <div class="down-container"><ion-text class="text-down">{{event.price}}</ion-text></div>  
+            </div>
+          </div> 
+          <div class="all-info">
+            <div class="info-photo">
+              <img class="img" src="https://img.freepik.com/vector-premium/concepto-navegador-mapas-gps-mapas-calles-direcciones-ilustracion-vectorial_230920-2779.jpg?w=1800">
+            </div>
+            <div class="separator-column"></div>
+            <div class="info-container">
+              <div class="down-container"><ion-text class="text-up">{{event.place}}</ion-text></div>
+              <div class="down-container"><ion-text class="text-down">{{event.direction}}</ion-text></div>  
+            </div>
+          </div> 
+          <div class="all-info">
+            <div class="info-photo">
+              <img class="img" src="https://img.freepik.com/psd-gratis/representacion-3d-icono-interfaz-usuario_23-2149182278.jpg?w=1380&t=st=1683804225~exp=1683804825~hmac=c18bf0ed03bd3c7d45088a4481f9464c75b9d02958191addb282d3a7500eb378">
+            </div>
+            <div class="separator-column"></div>
+            <div class="info-container">
+              <div class="down-container"><ion-text class="text-up">{{event.dateStart}}{{event.dateEnd}}</ion-text></div>
+              <div class="down-container"><ion-text class="text-down">{{event.hours}}</ion-text></div>  
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="description">
+          <img  class="info-icon" src="../../../../../assets/informacion.png"><br>
+          <ng-container *ngIf="isReadMore; else elseTemplate">
+           {{ event.description | slice:0:event.description.length }}
+          </ng-container>
+          <ng-template #elseTemplate>
+            {{ event.description | slice:0:100 }}
+          </ng-template>
+          <ion-text class="readMoreText" (click)="readMore()"> {{isReadMore ? '...leer menos' : '...leer mas'}} </ion-text>
+        </div>
+
+
+        <div class="knowMore"></div>
+      </div>
+    </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

@@ -1,0 +1,57 @@
+
+<ion-content>
+  <div class="content">
+    <div class="logo">
+      <ion-img src="../../../assets/valenciaApp.png"></ion-img>
+    </div>
+    
+    <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate class="login-card">
+      <ion-item lines="full" class="username-input"
+        [ngClass]="this.ionicForm.controls['username'].status == 'INVALID' && this.ionicForm.controls['username'].touched ?'error-input' : ''">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input  formControlName="username" type="text"></ion-input>
+      </ion-item>
+      <span class="error"
+        *ngIf="this.ionicForm.controls['username'].value == '' && this.ionicForm.controls['username'].touched ?'error-input' : ''">
+        *Campo requerido.
+      </span>
+      <span class="error" *ngIf="errorControl['username'].errors?.['minlength']">
+        *Minimo dos letras.
+      </span>
+
+      <ion-item lines="full" class="password-input"
+        [ngClass]="this.ionicForm.controls['password'].status == 'INVALID' && this.ionicForm.controls['password'].touched ?'error-input' : ''">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" maxlength="30" type="password"></ion-input>
+      </ion-item>
+      <span class="error"
+        *ngIf="this.ionicForm.controls['password'].value == '' && this.ionicForm.controls['password'].touched ?'error-input' : ''">
+        *Campo requerido.
+      </span>
+      <span class="error" *ngIf="errorControl['password'].errors?.['pattern']">
+        *Formato de contraseña erroneo.
+      </span>
+      <div class="button-login">
+      <ion-button  color="#344966" class="login-button" (click)="submitForm()">
+        ENTRAR
+      </ion-button>
+    </div>
+
+    </form>
+    <div class="login-firebase"> 
+      <ion-text class="text-sign-up">O inicia sesion mediante</ion-text>
+    </div>
+
+    <div class="option-login">
+      <div class="icon-container" (click)="loginGoogle()">
+        <img src="../../../assets/google.png">
+      </div>
+    </div>
+
+    <div class="go-register">
+      <ion-text class="text-dont-have-account">¿Todavía no tienes cuenta?</ion-text>
+      <ion-text class="click-login" (click)="goRegister()"> Registrate </ion-text>
+    </div>
+  </div>
+
+</ion-content>

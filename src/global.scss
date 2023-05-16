@@ -24,3 +24,60 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-content {
+    --background: black;
+    --backdrop-opacity: var(--ion-backdrop-opacity, 1.1);
+
+}
+
+.searchbar-search-icon {
+    margin-top: 7px;
+    margin-left: 300px !important;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+    -webkit-padding-start: 55px;
+    padding-inline-start: 55px;
+    -webkit-padding-end: 55px;
+    padding-inline-end: 55px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-position: left 8px center;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+    -webkit-padding-start: 55px;
+    padding-inline-start: 29px;
+    -webkit-padding-end: 55px;
+    padding-inline-end: 55px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    /* background-position: left 8px center; */
+    /* height: auto; */
+    /* font-size: 16px; */
+    /* font-weight: 400; */
+    /* line-height: 30px; */
+}
+
+.searchbar-input.sc-ion-searchbar-ios {
+    -webkit-padding-start: 28px;
+    padding-inline-start: 28px;
+    -webkit-padding-end: 28px;
+    padding-inline-end: 28px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 400;
+    contain: strict;
+}
+
+
+
+
+

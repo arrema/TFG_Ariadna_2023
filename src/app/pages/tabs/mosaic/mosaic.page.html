@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="container">
+    <div class="header">
+      <ion-text class="text-header">Events</ion-text>
+      <ion-icon class="icon-header" name="calendar"></ion-icon>
+    </div>
+    <!-- <div class="searchbar-section">
+      <ion-searchbar class="searchbar" show-clear-button="never" placeholder="Buscador"></ion-searchbar>
+    </div> -->
+
+    <div class="principal-content" *ngFor="let event of eventsList" routerLink="events-details" (click)="showEventDetails(event)">
+
+      <ion-card class="background">
+        <img [src]="event.photo" class="image"/>
+          <ion-card-content class="background">
+            <div class="card-content">
+              <div class="shortDate">
+                <ion-text>{{event.shortDate}}</ion-text>
+              </div>
+              <div class="title">
+                <ion-text>{{event.title}}</ion-text>
+              </div>
+              <div class="place">
+                <ion-icon name="location-outline"></ion-icon> <ion-text>{{event.place}}</ion-text>
+              </div>
+            </div>
+          </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

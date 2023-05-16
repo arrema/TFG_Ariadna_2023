@@ -1,0 +1,82 @@
+<ion-content>
+  <div class="image-content">
+    <div class="return-mosaic-text">
+      <ion-icon name="arrow-back-outline" class="back-arrow" (click)="goBackMosaic()"></ion-icon>
+      <ion-text class="text-mosaic">Volver</ion-text>
+    </div>
+    <img [src]="restaurant.MainPhoto" class="image">
+  </div>
+  <ion-modal [isOpen]="true" type="md" [initialBreakpoint]="0.50" [breakpoints]="[0.8,0.50,1]">
+    <ng-template>
+      <ion-content>
+
+        <div class="return-mosaic-text-inside" *ngIf="isActive">
+          <ion-icon name="arrow-back-outline" class="back-arrow" (click)="goBackMosaic()"></ion-icon>
+          <ion-text class="text-mosaic">Volver</ion-text>
+
+        </div>
+        <div class="container">
+          <div>
+            <ion-text class="title-text">
+              {{restaurant.Title}}
+            </ion-text>
+          </div>
+          <div class="description">
+            <ion-text class="description-text">
+              {{restaurant.Description}}
+            </ion-text>
+          </div>
+          <div class="price-container">
+            <ion-text class="price-text">
+              <ion-text class="unit-text">Precio aproximado: </ion-text> {{restaurant.Price}}€
+            </ion-text>
+          </div>
+        </div>
+        <div class="second-container">
+          <ion-text class="talla-text">
+            Opciones:
+          </ion-text>
+          <div class="sizes">
+            <div *ngFor="let option of restaurant.Options" class="size-square">
+              <div>{{option}}</div>
+            </div>
+             
+          </div>
+          <div class="color-container">
+            <ion-text class="color-text">
+              Lugares
+            </ion-text>
+
+            <div class="sizes">
+              <div *ngFor="let place of restaurant.Places" class="size-square">
+                <div>{{place}}</div>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+
+        <div class="similars-section">
+          <div>
+            <ion-text class="similars-text">Galeria
+            </ion-text>
+          </div>
+          
+ 
+          <ion-segment class="segment">
+            <div class="similar-photos-list">
+              <div class="photos-container">
+                <ion-icon name="chevron-back-outline" class="next-photo" (click)="beforePhoto()"></ion-icon>
+                <img class="figure" [src]="restaurant.Photos[positionArrayPhotos]">
+                <ion-icon name="chevron-forward-outline" class="next-photo"  (click)="nextPhoto()"></ion-icon>
+              </div>
+            </div>
+          </ion-segment>
+        </div>
+        <div class="button-container">
+          <button class="button-reserve" (click)="openReservePage()">Reservar</button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

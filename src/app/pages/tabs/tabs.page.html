@@ -1,0 +1,20 @@
+<ion-tabs class="tab-style" (ionTabsWillChange)="onTabsWillChange($event)">
+  <ion-tab-bar slot="bottom" selectedTab="home">
+    <ion-tab-button tab="mosaic">
+      <div [ngClass]="this.tabActive === 'mosaic' ? 'button-touched' : ''">
+        <img src="../../../assets/papel-picado.png">
+      </div>
+    </ion-tab-button>
+    <ion-tab-button tab="home">
+      <div [ngClass]="this.tabActive === 'home' ? 'button-touched' : ''">
+        <ion-icon class="icon-header" name="restaurant-outline"></ion-icon>
+      </div>
+    </ion-tab-button>
+    <ion-tab-button tab="emoji">
+      <div [ngClass]="this.tabActive === 'emoji' ? 'button-touched' : ''">
+        <img src="../../../assets/emoji-light.svg">
+      </div>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

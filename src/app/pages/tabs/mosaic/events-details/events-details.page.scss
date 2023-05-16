@@ -1,0 +1,163 @@
+.image-content {
+    position: relative;
+}
+.return-mosaic-text-inside {
+    margin-top: 20px;
+    margin-left: 20px;
+    
+}
+.back-arrow {
+    color: #F9F9F9;
+    font-size: 20px;
+}
+.text-mosaic {
+    font-style: normal;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #F9F9F9;
+}
+
+.info-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.return-mosaic-text {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+}
+
+.back-arrow {
+    color: #F9F9F9;
+    font-size: 20px;
+}
+
+.text-mosaic {
+    font-style: normal;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #F9F9F9;
+}
+
+.image {
+    height: 400px;
+}
+
+.modal {
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.0);
+    --border-radius: 30px;
+    --background: #373737;
+   
+}
+
+.title {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.name{
+    // margin-left: 25px;
+    font-weight: 700;
+    font-size: 30px;
+    color:white;
+}
+.separation-line{
+    border-top: 1px solid white;
+    width: 350px;
+}
+
+.all-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    margin-top:35px;
+}
+.all-info-first {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    margin-top:10px;
+}
+.info{
+    width: 80%;
+    height: 300px;
+    margin-top:10px ;
+}
+
+.info-container{
+    margin-left:10px;
+}
+.text-up{
+    color:white;
+    font-weight: 700; 
+}
+
+.text-down{
+    color:white;
+    font-weight: 200; 
+}
+// .image{
+//     border-radius:15px;
+//     max-width: 100%;
+// }
+
+
+.description {
+   color:white;
+   overflow: hidden;
+    width:320px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+// .knowMore {
+//     border: 1px solid white
+// }
+
+.modal-container{
+    display: flex;align-items: center;justify-content:center ;flex-direction: column;
+}
+
+.info-photo{
+    width: 75px;
+    height: 75px;
+    border-radius: 30px;
+}
+.img {
+    width: 75px;
+    height: 75px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.down-container{
+    margin-top: 10px;
+    width: 200px;
+}
+.separator-column{
+    border-left: 1px solid white;
+    height: 70px;
+    margin-left: 15px;
+}
+
+.limitTextHeight {
+    height: 165px;
+    overflow: hidden;
+}
+
+.readMoreText{
+    color:#FFC300;
+    font-weight: 500;
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "422692884929",
+    "firebase_url": "https://valenciaapp-48466-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "valenciaapp-48466",
+    "storage_bucket": "valenciaapp-48466.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422692884929:android:888a7a0508bb87dc7a9f40",
+        "android_client_info": {
+          "package_name": "com.valenciaApp.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422692884929-ug8m3k72srvquddgi0om4at1gqoki2os.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjsvXv5rm6Mkrkkbn_vqGiUgnvNWnU5lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422692884929-i9ql6k8gn2bcmhs3akfuprb0tacsh71r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

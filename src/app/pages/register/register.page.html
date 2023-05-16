@@ -1,0 +1,77 @@
+<ion-content>
+  <div class="header">
+    <ion-icon name="arrow-back-outline" class="back-arrow" (click)="goBackLogin()"></ion-icon>
+    <ion-text class="text-mosaic">Volver</ion-text>
+  </div>
+  <div class="content">
+    <div class="position-phrase">
+    <div class="create-account-title">
+      <ion-text class="create-account-text">
+        Creación 
+        Cuenta
+      </ion-text>
+    </div>
+  </div>
+    <form [formGroup]="ionicFormRegister" (ngSubmit)="submitForm()" novalidate class="login-card">
+
+      <ion-item lines="full" class="username-input"
+        [ngClass]="this.ionicFormRegister.controls['name'].status == 'INVALID' && this.ionicFormRegister.controls['name'].touched ?'error-input' : ''">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+      <span class="error"
+        *ngIf="this.ionicFormRegister.controls['name'].value == '' && this.ionicFormRegister.controls['name'].touched ?'error-input' : ''">
+        *Campo requerido.
+      </span>
+      <ion-item lines="full" class="username-input"
+        [ngClass]="this.ionicFormRegister.controls['username'].status == 'INVALID' && this.ionicFormRegister.controls['username'].touched ?'error-input' : ''">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input formControlName="username" type="text"></ion-input>
+      </ion-item>
+      <span class="error"
+        *ngIf="this.ionicFormRegister.controls['username'].value == '' && this.ionicFormRegister.controls['username'].touched ?'error-input' : ''">
+        *Campo requerido.
+      </span>
+      <span class="error" *ngIf="errorControl['username'].errors?.['minlength']">
+        *Minimo dos letras.
+      </span>
+
+      <ion-item lines="full" class="password-input"
+        [ngClass]="this.ionicFormRegister.controls['password'].status == 'INVALID' && this.ionicFormRegister.controls['password'].touched ?'error-input' : ''">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" maxlength="30" type="password"></ion-input>
+      </ion-item>
+      <span class="error"
+        *ngIf="this.ionicFormRegister.controls['password'].value == '' && this.ionicFormRegister.controls['password'].touched ?'error-input' : ''">
+        *Campo requerido.
+      </span>
+      <span class="error" *ngIf="errorControl['password'].errors?.['pattern']">
+        *Formato de contraseña erroneo.
+      </span>
+
+      <ion-item lines="full" class="password-input"
+        [ngClass]="this.ionicFormRegister.controls['passwordRepeat'].status == 'INVALID' && this.ionicFormRegister.controls['passwordRepeat'].touched ?'error-input' : ''">
+        <ion-label position="floating">Repetir contraseña</ion-label>
+        <ion-input formControlName="passwordRepeat" maxlength="30" type="password"></ion-input>
+      </ion-item>
+      <span class="error"
+        *ngIf="this.ionicFormRegister.controls['passwordRepeat'].value == '' && this.ionicFormRegister.controls['passwordRepeat'].touched ?'error-input' : ''">
+        *Campo requerido.
+      </span>
+      <span class="error" *ngIf="errorControl['passwordRepeat'].errors?.['pattern']">
+        *Formato de contraseña erroneo.
+      </span>
+      <div class="button-login">
+        <ion-button color="#344966" class="login-button" (click)="submitFormRegister()">
+          ENTRAR
+        </ion-button>
+      </div>
+    </form>
+    <div class="go-login">
+      <ion-text class="text-have-account">¿Ya tienes cuenta?</ion-text>
+      <ion-text class="click-login" (click)="goLogin()"> Inicia sesion </ion-text>
+    </div>
+  </div>
+  <div class="login-firebase"></div>
+
+</ion-content>

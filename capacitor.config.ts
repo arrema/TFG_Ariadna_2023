@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.valenciaApp.app',
   appName: 'mosaic',
   webDir: 'www',
   bundledWebRuntime: false
